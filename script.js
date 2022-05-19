@@ -12,7 +12,7 @@ function attList() {
         let li = document.createElement('li') //li criada
         li.id = count
 
-        li.innerHTML = `<input type = "checkbox" onchange="riscar(${count},this)">
+        li.innerHTML = `<input type="checkbox" onchange="riscar(${count},this)">
                         <span id="span${count}">${item}</span>` //leitura: o filho.vai se chamar = item
         ul.appendChild(li) //add o li na ul
         count++
@@ -28,7 +28,7 @@ function add() {
         list.push(newItem.value) //adiciona o item na lita
         attList()
     } else {
-        msg.innerHTML = `Por favor insira uma tarefa`
+        msg.innerHTML = `Por favor insira uma tarefa!`
         setTimeout(() => {
             msg.innerHTML = ""
         }, 2000)
