@@ -7,22 +7,32 @@
     <title>To do list</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg bg-dark">
-    <main class="list list-dark">
+    <main>
+        <div id="container" class="c-dark">
             <h1>To-do List</h1>
 
             <p>
-                <input id="newItem" type="text" placeholder="add new task here...">
-                <button onclick="add()"><i class="fa-solid fa-plus"></i></button>
+                <input id="newItem" type="text" placeholder="new task here...">
+                <button class="btn" id="add" onclick="add()"><i class="fa-solid fa-plus"></i></button>
             </p>
 
             <p id="msg" class="erro"></p>
 
-            <br>
-            <ul id="itens"></ul>
+            <ul id="itens"></ul> 
+        </div>
+
+        <button class="btn" id="limpar" onclick="limpar()">Clear</button>
     </main>
+
+    <div>
+        <i id="iconMode" class="fa-solid fa-sun sun-dark" onclick="mode()"></i>
+    </div>
 </body>
 
 <script src="script.js"></script>

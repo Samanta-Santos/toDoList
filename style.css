@@ -1,6 +1,7 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    font-family: 'Nunito', sans-serif;
 }
 
 .bg {
@@ -10,69 +11,141 @@
 }
 
 .bg-light {
-    background: rgb(255,255,255);
+    background: rgb(210, 210, 210);
 }
 
 .bg-dark {
-    background: rgb(51,51,51);
+    background: rgb(51, 51, 51);
 }
 
-.list {
+#container {
     text-align: center;
-    width: 300px;
+    min-width: 300px;
     min-height: 300px;
     border-radius: 15px;
+    padding: 15px;
 }
 
-.list-light {
-    background: rgb(51,51,51);
-    color: rgb(255,255,255);
+.c-light {
+    background: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
 }
 
-.list-dark {
-    background: rgb(255,255,255);
-    color: rgb(51,51,51);
+.c-dark {
+    background: rgb(186, 186, 186);
+    color: rgb(51, 51, 51);
 }
 
 h1 {
-    margin-top: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-weight: bolder;
+    margin-bottom: 10px;
 }
 
 #newItem {
     border: none;
     border-radius: 10px;
     padding: 5px;
-    margin-top: 15px;
 }
 
 #newItem:focus {
     outline: 0;
 }
 
-button {
-    padding: 6px;
+.btn {
     border-radius: 10px;
     border-style: none;
+    cursor: pointer;
 }
 
-i{
-    color: grey;
+#add {
+    width: 30px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: rgb(30, 128, 241);
+    color: rgb(236, 236, 236);
 }
 
 .erro {
     background: rgba(255, 16, 16, 0.532);
-    width: 200px;
+    color: white;
     margin: auto;
+    width: 200px;
+    margin-top: 5px;
+    border-radius: 5px;
 }
 
-#itens{
+#itens {
     list-style: none;
+    margin-bottom: 40px;
+    margin-top: 15px;
 }
 
-#itens li{
+#itens li {
     text-align: left;
     margin-left: 50px;
     font-size: 20px;
+}
+
+.checkmark {
+    position: relative;
+    cursor: pointer;
+}
+
+.checkmark:before, .checkmark:checked:before {
+    content: ""; /*div dinâmica*/
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -4px;
+    left: -5px;
+    border-radius: 5px;
+}
+
+.checkmark:before{
+    background-color:#e9e9e9;
+}
+
+.checkmark:checked:before {
+    background-color: rgb(30, 128, 241);
+}
+
+.checkmark:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: -2px;
+    left: 2px;
+}
+
+#iconMode {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.sun-dark {
+    color: rgb(186, 186, 186);
+}
+
+.sun-light {
+    color: rgb(51, 51, 51);
+}
+
+#limpar {
+    display: block;
+    padding: 6px;
+    margin: -40px auto 0;
+    color: rgb(236, 236, 236);
+    font-weight: bold;
+    background-color: rgb(30, 128, 241);
 }

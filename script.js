@@ -12,8 +12,8 @@ function attList() {
         let li = document.createElement('li') //li criada
         li.id = count
 
-        li.innerHTML = `<input type="checkbox" onchange="riscar(${count},this)">
-                        <span id="span${count}">${item}</span>` //leitura: o filho.vai se chamar = item
+        li.innerHTML = `<input type="checkbox" class="checkmark" onchange="riscar(${count},this)">
+                        <span id="span${count}"> ${item}</span>` //leitura: o filho.vai se chamar = item
         ul.appendChild(li) //add o li na ul
         count++
     })
@@ -28,15 +28,16 @@ function add() {
         list.push(newItem.value) //adiciona o item na lita
         attList()
     } else {
-        msg.innerHTML = `Por favor insira uma tarefa!`
+        msg.innerHTML = `Please, write your task!`
         setTimeout(() => {
             msg.innerHTML = ""
-        }, 2000)
+        }, 3000)
     }
     newItem.value = ""
+    newItem.focus()
 }
 
-// vai riscar o item
+//riscar o item
 function riscar(count, checkbox) {
     let span = document.querySelector('#span' + count)
 
@@ -47,4 +48,38 @@ function riscar(count, checkbox) {
         removeDel = removeDel.replace('</del>', '') //está removendo do final
         span.innerHTML = removeDel
     }
+}
+
+//modo dark e light
+function mode() {
+    let iconMode = document.querySelector('#iconMode')
+    let body = document.querySelector('body')
+    let container = document.querySelector('#container')
+
+    if (iconMode.classList.contains('fa-sun')) {
+
+        iconMode.classList.remove('fa-sun', 'sun-dark')
+        iconMode.classList.add('fa-moon', 'sun-light')
+
+        body.classList.remove('bg-dark')
+        body.classList.add('bg-light')
+
+        container.classList.remove('c-dark')
+        container.classList.add('c-light')
+    } else {
+        iconMode.classList.remove('fa-moon', 'sun-light')
+        iconMode.classList.add('fa-sun', 'sun-dark')
+
+        body.classList.remove('bg-light')
+        body.classList.add('bg-dark')
+
+        container.classList.remove('c-light')
+        container.classList.add('c-dark')
+    }
+}
+
+function limpar(){
+    list = []
+    attList()
+    newItem.focus()
 }
